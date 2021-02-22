@@ -21,7 +21,7 @@ projectinit() {
         git remote add origin git@github.com:$GITHUB_LOGIN/$PROJECTNAME.git
         git push -u origin main
 
-        # Open code edited in created project folder
+        # Open code editor in created project folder
         # vim .
         code .
         # atom .
