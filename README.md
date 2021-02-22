@@ -4,7 +4,7 @@ Using this you can create local and remote repos and sync them with just one com
 
 ## Initial Set Up
 1. Add SSH key to your GitHub account (skip if already did)
-2. Clone the repository
+2. Clone the repository to a folder when you want to store your projects
 ```bash
 $ git clone git@github.com:Infvmous/project-initializer.git
 ```

@@ -4,7 +4,8 @@ projectinit() {
     PROJECTNAME=$1
     
     # cd to project initializer dir to source env variables
-    cd $PROJECTINITPATH
+    # cd $PROJECTINITPATH
+    cd $PROJECTSDIR/project-initializer
     source setenv.sh
 
     # Activate pyenv
