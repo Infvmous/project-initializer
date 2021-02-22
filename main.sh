@@ -7,8 +7,11 @@ projectinit() {
     cd $PROJECTINITPATH
     source setenv.sh
 
+    # Activate pyenv
+    source env/bin/activate
+
     # Check if python script executed without errors
-    if python3 . $PROJECTNAME; then
+    if python . $PROJECTNAME; then
         # cd to projects directory
         cd $PROJECTSDIR/$PROJECTNAME
 
@@ -32,4 +35,6 @@ projectinit() {
         echo "failure: $?"
     fi
 
+    # Deactivate pyenv
+    deactivate
 }
