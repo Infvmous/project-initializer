@@ -35,8 +35,8 @@ $ deactivate
 ```
 
 ## Usage
-Simply run `projectinit {your project name}` in the terminal and it will create local and remote repos for you
-If you want to open created project in your code editor add third argument to `projectinit` command
+- Simply run `projectinit {your project name}` in the terminal and it will create local and remote repos for you
+- If you want to open created project in your code editor add third argument to `projectinit` command
 ```bash
 $ projectinit my_project code
 ```
