@@ -2,9 +2,8 @@
 
 projectinit() {
     PROJECTNAME=$1
-    
+
     # cd to project initializer dir to source env variables
-    # cd $PROJECTINITPATH
     cd $PROJECTSDIR/project-initializer
     source setenv.sh
 
@@ -13,11 +12,11 @@ projectinit() {
 
     # Check if python script executed without errors
     if python . $PROJECTNAME; then
-        # cd to projects directory
+        # Move to created project folder
         cd $PROJECTSDIR/$PROJECTNAME
 
         # GitHub quick setup
-        touch README.md
+        echo "# $PROJECTNAME" >> README.md
         git init
         git add README.md
         git commit -m "initial commit"
@@ -26,10 +25,10 @@ projectinit() {
         git push -u origin main
 
         # Open code editor in created project folder
-        # vim .
-        code .
-        # atom .
-        # etc
+        # $2 - argument for code editor
+        if [ ! -z "$2" ]; then
+            $2 .
+        fi
 
         echo "success"
     else
