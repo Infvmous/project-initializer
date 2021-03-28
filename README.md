@@ -20,7 +20,7 @@ $ python -m venv env && source env/bin/activate
 ```bash
 $ pip install -r requirements.txt
 ```
-6. Add GitHub API token and login to `setenv.sh`
+6. Add GitHub API token and login to `setenv.sh`, can be created [here](https://github.com/settings/tokens/new)
 ```bash
 export GITHUB_TOKEN='YOUR GITHUB TOKEN'
 export GITHUB_LOGIN='YOUR GITHUB LOGIN'
