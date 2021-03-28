@@ -1,6 +1,6 @@
 # Project Initializer
 
-Using this you can create local and remote repos and sync them with just one command
+![vim example](https://i.imgur.com/a/LezMLXY.gif)
 
 ## Initial Set Up
 1. Add SSH key to your GitHub account (skip if already did)
