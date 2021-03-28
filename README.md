@@ -1,12 +1,12 @@
 # Project Initializer
 
-![vim example](https://i.imgur.com/a/LezMLXY.gif)
+![vim-example](https://i.imgur.com/8Vf1fNq.gif)
 
 ## Initial Set Up
 1. Add SSH key to your GitHub account (skip if already did)
-2. Clone the repository to a folder when you want to store your projects
+2. Clone the repository to directory where you want to store future projects
 ```bash
-$ git clone git@github.com:Infvmous/project-initializer.git
+$ git@github.com:ysomad/project-initializer.git
 ```
 3. Move to project initializer folder
 ```bash
@@ -41,3 +41,4 @@ $ deactivate
 $ projectinit my_project code
 ```
 
+# test
