@@ -1,8 +1,7 @@
 #!/bin/bash
 
-chmod +x main.sh
-source main.sh
-
+chmod +x init.sh
+source init.sh
 
 # Check what shell current profile is using
 if test -n "$ZSH_VERSION"; then
@@ -21,11 +20,13 @@ fi
 
 SHELLRC="${HOME}/.${PROFILE_SHELL}rc"
 
+INITFILE="init.sh"
+EXPORT_PROJECTSDIR_STR="export PROJECTSDIR=$(dirname "$(pwd)")"
+SOURCE_PROJECTINITIALIZER_STR="source \$PROJECTSDIR/project-initializer/$INITFILE"
+
 if [[ ! $PROFILE_SHELL =~ ^(unknown|sh)$ ]]; then
-    # grep -qxF "export PROJECTINITPATH=$PWD" $SHELLRC || echo "export PROJECTINITPATH=$PWD" >> $SHELLRC
-    # grep -qxF 'source $PROJECTINITPATH/main.sh' $SHELLRC || echo 'source $PROJECTINITPATH/main.sh' >> $SHELLRC
-    grep -qxF "export PROJECTSDIR=$(dirname "$(pwd)")" $SHELLRC || echo "export PROJECTSDIR=$(dirname "$(pwd)")" >> $SHELLRC
-    grep -qxF 'source $PROJECTSDIR/project-initializer/main.sh' $SHELLRC || echo 'source $PROJECTSDIR/project-initializer/main.sh' >> $SHELLRC
+    grep -qxF $EXPORT_PROJECTSDIR_STR $SHELLRC || echo $EXPORT_PROJECTSDIR_STR >> $SHELLRC
+    grep -qxF $SOURCE_PROJECTINITIALIZER_STR $SHELLRC || echo $SOURCE_PROJECTINITIALIZER_STR >> $SHELLRC
 fi
 
 
