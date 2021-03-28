@@ -37,7 +37,7 @@ def create_github_repository(repo_name: str) -> None:
     req.add_header('Authorization', f'token {os.environ["GITHUB_TOKEN"]}')
     data = json.dumps({'name': repo_name}).encode()
     content = handle_response_status_codes(req, data)
-    print(f'New GitHub repo created at {content["html_url"]}')
+    print(f'Setting up new project at {content["html_url"]}')
 
 
 def main(project_name: str) -> None:
