@@ -1,7 +1,6 @@
 import sys
 import os
 import json
-import ssl
 
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
@@ -24,12 +23,7 @@ def handle_response_status_codes(req: Request, data: str) -> dict:
     Throws HTTPError if request wasn't successful
     """
     try:
-        # Skip ssl verification
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-
-        resp = urlopen(req, data=data, context=ctx)
+        resp = urlopen(req, data=data)
         return json.load(resp)
     except HTTPError as e:
         sys.exit(f'Status: {e.code} {e.msg}\nHeaders: \n{e.hdrs}')
