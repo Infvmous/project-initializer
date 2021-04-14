@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 projectinit() {
     PROJECTNAME=$1
 
     # cd to project initializer dir to source env variables
     cd $PROJECTSDIR/project-initializer
-    source setenv.sh
 
     # Check if python script executed without errors
     if python3 . $PROJECTNAME; then
@@ -22,7 +21,6 @@ projectinit() {
         git push -u origin main
 
         # Open code editor in created project folder
-        # $2 - argument for code editor
         if [ ! -z "$2" ]; then
             $2 .
         fi

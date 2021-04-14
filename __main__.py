@@ -1,9 +1,15 @@
 import sys
 import os
 import json
+from typing import Union, Optional
 
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+
+
+BASE_URL = 'https://api.github.com'
+GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
+PROJECTS_FOLDER = os.environ['PROJECTSDIR']
 
 
 def create_project_folder(folder_name: str) -> None:
@@ -12,13 +18,13 @@ def create_project_folder(folder_name: str) -> None:
     if such a project name doesn't exist
     """
     try:
-        os.mkdir(f'{os.environ["PROJECTSDIR"]}/{folder_name}')
+        os.mkdir(f'{PROJECTS_FOLDER}/{folder_name}')
         print(f'Directory {folder_name} created')
     except FileExistsError:
         sys.exit(f'Directory {folder_name} already exists')
 
 
-def handle_response_status_codes(req: Request, data: str) -> dict:
+def handle_response_status_codes(req: Request, data: str) -> Union[dict, None]:
     """
     Throws HTTPError if request wasn't successful
     """
@@ -29,12 +35,16 @@ def handle_response_status_codes(req: Request, data: str) -> dict:
         sys.exit(f'Status: {e.code} {e.msg}\nHeaders: \n{e.hdrs}')
 
 
+def add_header_to_request(req: Request) -> None:
+    req.add_header('Authorization', f'token {GITHUB_TOKEN}')
+
+
 def create_github_repository(repo_name: str) -> None:
     """
     Creates new GitHub repository with repository name repo_name
     """
-    req = Request('https://api.github.com/user/repos', method='POST')
-    req.add_header('Authorization', f'token {os.environ["GITHUB_TOKEN"]}')
+    req = Request(f'{BASE_URL}/user/repos', method='POST')
+    add_header_to_request(req)
     data = json.dumps({'name': repo_name}).encode()
     content = handle_response_status_codes(req, data)
     print(f'Setting up new project at {content["html_url"]}')
