@@ -1,15 +1,15 @@
 import sys
 import os
 import json
-from typing import Union, Optional
+from typing import Union
 
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
 
 BASE_URL = 'https://api.github.com'
-GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
-PROJECTS_FOLDER = os.environ['PROJECTSDIR']
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+PROJECTS_FOLDER = os.getenv('PROJECTSDIR')
 
 
 def create_project_folder(folder_name: str) -> None:
