@@ -1,6 +1,6 @@
 # Project Initializer
 
-<img src="https://i.imgur.com/0LPDkwt.mp4" width="600" />
+<img src="https://media.giphy.com/media/eOyB8zJsXizkoKyJ4e/giphy.gif" />
 
 ## Initial Set Up
 1. Clone the repository to directory where you want to projects
