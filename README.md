@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/wWmMbH5.gif" width="600" />
 
 ## Initial Set Up
-1. Clone the repository to directory where you want to store future projects
+1. Clone the repository to directory where you want to projects
 ```bash
 $ git clone git@github.com:ysomad/project-initializer.git
 ```
@@ -11,14 +11,11 @@ $ git clone git@github.com:ysomad/project-initializer.git
 ```bash
 $ cd /path/to/project-initializer
 ```
-3. Add GitHub API token and login to `setenv.sh`, you create token [here](https://github.com/settings/tokens/new) with scope `repo`
-```bash
-export GITHUB_TOKEN='YOUR GITHUB TOKEN'
-export GITHUB_LOGIN='YOUR GITHUB LOGIN'
-```
-4. Source `setup.sh` which will add paths of projects folder and `init.sh` to .{shell}rc
+3. Run `setup.sh` and enter github credentials
 ```bash
 $ source setup.sh
+Enter GitHub API token(with repo scope): 
+Enter your GitHub login: 
 ```
 
 ## Usage
