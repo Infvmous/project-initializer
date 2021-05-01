@@ -3,7 +3,7 @@
 <img src="https://media.giphy.com/media/eOyB8zJsXizkoKyJ4e/giphy.gif" />
 
 ## Initial Set Up
-1. Clone the repository to directory where you want to projects
+1. Clone the repository to directory where you want to store projects
 ```bash
 $ git clone git@github.com:ysomad/project-initializer.git
 ```
