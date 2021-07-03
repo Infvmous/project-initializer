@@ -28,3 +28,4 @@ $ projectinit {projectname} {editor}
 
 ## TODO
 1. Make possible to provide project folder for projectinit() function as parameter with flag
+# test
