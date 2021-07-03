@@ -22,11 +22,11 @@ Enter your GitHub login:
 ## Usage
 Run `init` in the terminal
 ```bash
-$ init -n projectname -f /path/to/ -e code
+$ init -n projectname
 ```
 ### Options
-```
--n - project name
--e - code editor to open newly created project
--f - path to folder where to create a new project
-```
+Option | Description
+------------ | -------------
+-n | project name
+-f | path to folder where to create a new project
+-e | code editor to open newly created project 
