@@ -3,7 +3,7 @@
 <img src="https://media.giphy.com/media/eOyB8zJsXizkoKyJ4e/giphy.gif" />
 
 ## Initial Set Up
-1. Clone the repository to directory where you want to store projects
+1. Clone the repository
 ```bash
 $ git clone git@github.com:ysomad/project-initializer.git
 ```
@@ -11,7 +11,7 @@ $ git clone git@github.com:ysomad/project-initializer.git
 ```bash
 $ cd /path/to/project-initializer
 ```
-3. Run `setup.sh` and enter github credentials
+3. Run `setup.sh` and enter github API token and github login
 ```bash
 $ source setup.sh
 Enter GitHub API token(with repo scope): 
@@ -19,14 +19,11 @@ Enter your GitHub login:
 ```
 
 ## Usage
-Run projectinit function in the terminal
+Run `init` in the terminal
 ```bash
-$ projectinit {projectname} {editor}
+$ init -n projectname -f /path/to/ -e code
 ```
-- projectname - required
-- editor - optional
-
-## TODO
-1. Make possible to provide project folder for projectinit() function as parameter with flag
-# test
-# test
+### Options
+- -n - project name
+- -e - code editor to open newly created project
+- -f - path to folder where to create a new project

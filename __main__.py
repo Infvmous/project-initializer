@@ -8,8 +8,7 @@ from urllib.error import HTTPError
 
 
 BASE_URL = 'https://api.github.com'
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-PROJECTS_FOLDER = os.getenv('PROJECTSDIR')
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 
 def create_project_folder(folder_name: str, project_folder: str) -> None:

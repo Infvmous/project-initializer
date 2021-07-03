@@ -6,8 +6,8 @@ Project initializer script:
 
 OPTIONS:
    -n      project name
-   -e      code editor to open newly created project in
-   -f      folder where to create a new project
+   -e      code editor to open newly created project
+   -f      path to folder where to create a new project
 EOF
 }
 
