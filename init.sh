@@ -55,13 +55,13 @@ init() {
         fi
 
         # GitHub initialize new repo
-        # echo "# $PROJECTNAME" >> README.md
-        # git init
-        # git add README.md
-        # git commit -m "initial commit"
-        # git branch -M main
-        # git remote add origin git@github.com:$GITHUB_LOGIN/$PROJECTNAME.git
-        # git push -u origin main
+        echo "# $PROJECTNAME" >> README.md
+        git init
+        git add README.md
+        git commit -m "initial commit"
+        git branch -M main
+        git remote add origin git@github.com:$GITHUB_LOGIN/$PROJECTNAME.git
+        git push -u origin main
 
         # Open created project folder in editor
         if [ ! -z "$CODE_EDITOR" ]; then
