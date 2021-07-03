@@ -1,6 +1,6 @@
 # Project Initializer
 
-![demo](https://asciinema.org/a/423713.svg)](https://asciinema.org/a/423713?autoplay=1)
+[![demo](https://asciinema.org/a/423713.svg)](https://asciinema.org/a/423713?autoplay=1)
 
 
 ## Initial Set Up
