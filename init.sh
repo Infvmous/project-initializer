@@ -2,12 +2,12 @@
 
 usage() {
     cat <<EOF
-Project initializer script:
+usage: init [options] [<projectname>] 
 
-OPTIONS:
-   -n      project name
+options:
    -e      code editor to open newly created project
-   -f      path to folder where to create a new project
+   -p      path to folder where to create a new project
+
 EOF
 }
 
@@ -21,11 +21,10 @@ init() {
     fi
 
     # setup flags
-    while getopts ":n:e:f:h" flag; do
+    while getopts ":e:p:h" flag; do
         case "${flag}" in
-        n) PROJECTNAME="${OPTARG}" ;;
         e) CODE_EDITOR=${OPTARG} ;;
-        f) NEW_PROJECT_FOLDER="${OPTARG}" ;;
+        p) NEW_PROJECT_FOLDER="${OPTARG}" ;;
         h) 
             usage 
             exit 0
@@ -38,22 +37,31 @@ init() {
     done
     shift $((OPTIND - 1))
 
+    PROJECTNAME=$1
+
     # cd to project initializer dir to source env variables
     cd $PROJECTSDIR/project-initializer
 
     # Check if python script executed without errors
     if python3 . $PROJECTNAME $NEW_PROJECT_FOLDER; then
-        # Move to created project folder
-        cd $NEW_PROJECT_FOLDER/$PROJECTNAME
+        PATH_TO_PROJECT="$NEW_PROJECT_FOLDER/$PROJECTNAME"
+        # Move to created project folder if its exists
+        if [ -d "$PATH_TO_PROJECT" ]; then
+            cd $PATH_TO_PROJECT
+        else
+            echo "Folder ${PATH_TO_PROJECT} doesn't exist\n"
+            usage
+            exit 0
+        fi
 
         # GitHub initialize new repo
-        echo "# $PROJECTNAME" >> README.md
-        git init
-        git add README.md
-        git commit -m "initial commit"
-        git branch -M main
-        git remote add origin git@github.com:$GITHUB_LOGIN/$PROJECTNAME.git
-        git push -u origin main
+        # echo "# $PROJECTNAME" >> README.md
+        # git init
+        # git add README.md
+        # git commit -m "initial commit"
+        # git branch -M main
+        # git remote add origin git@github.com:$GITHUB_LOGIN/$PROJECTNAME.git
+        # git push -u origin main
 
         # Open created project folder in editor
         if [ ! -z "$CODE_EDITOR" ]; then

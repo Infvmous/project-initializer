@@ -46,8 +46,9 @@ def create_github_repository(repo_name: str) -> None:
 
 
 def main(project_name: str, project_folder: str) -> None:
-    create_project_folder(project_name, project_folder)
-    create_github_repository(project_name)
+    # create_project_folder(project_name, project_folder)
+    # create_github_repository(project_name)
+    print(project_name, project_folder)
 
 
 if __name__ == '__main__':
