@@ -1,9 +1,9 @@
 # Project Initializer
 
-<img src="https://media.giphy.com/media/eOyB8zJsXizkoKyJ4e/giphy.gif" />
+[![demo](https://asciinema.org/a/423716.svg)](https://asciinema.org/a/423716?autoplay=1)
 
 ## Initial Set Up
-1. Clone the repository to directory where you want to store projects
+1. Clone the repository
 ```bash
 $ git clone git@github.com:ysomad/project-initializer.git
 ```
@@ -11,22 +11,31 @@ $ git clone git@github.com:ysomad/project-initializer.git
 ```bash
 $ cd /path/to/project-initializer
 ```
-3. Run `setup.sh` and enter github credentials
+3. Run `setup.sh` and enter GitHub API token and username
 ```bash
 $ source setup.sh
 Enter GitHub API token(with repo scope): 
-Enter your GitHub login: 
+Enter GitHub username: 
 ```
 
 ## Usage
-Run projectinit function in the terminal
+Run `init` in the terminal with or without optional arguments
+- Without optional arguments
 ```bash
-$ projectinit {projectname} {editor}
+$ init projectname
 ```
-- projectname - required
-- editor - optional
+- Specifying path where project will be created
+```bash
+$ init -p /Users/alex/Desktop projectname
+```
+By default all projects will be created in the same directory where project-initializator was cloned
+- Specifying code editor in which folder with project will open after creation (VS Code for example)
+```bash
+$ init -e code projectname
+```
 
-## TODO
-1. Make possible to provide project folder for projectinit() function as parameter with flag
-# test
-# test
+### Options
+Option | Description
+------------ | -------------
+-f | path to folder where to create a new project
+-e | code editor to open newly created project 

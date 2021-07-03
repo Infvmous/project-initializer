@@ -3,7 +3,7 @@
 echo -n "Enter GitHub API token(with repo scope): "
 read GITHUB_TOKEN
 
-echo -n "Enter your GitHub login: "
+echo -n "Enter GitHub username: "
 read GITHUB_LOGIN
 
 chmod +x init.sh
