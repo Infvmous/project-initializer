@@ -1,6 +1,7 @@
 # Project Initializer
 
-<img src="https://media.giphy.com/media/eOyB8zJsXizkoKyJ4e/giphy.gif" />
+![demo](https://asciinema.org/a/423713.svg)](https://asciinema.org/a/423713?autoplay=1)
+
 
 ## Initial Set Up
 1. Clone the repository
@@ -24,6 +25,8 @@ Run `init` in the terminal
 $ init -n projectname -f /path/to/ -e code
 ```
 ### Options
-- -n - project name
-- -e - code editor to open newly created project
-- -f - path to folder where to create a new project
+```
+-n - project name
+-e - code editor to open newly created project
+-f - path to folder where to create a new project
+```
