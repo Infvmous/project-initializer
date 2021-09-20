@@ -2,6 +2,10 @@
 
 [![demo](https://asciinema.org/a/423716.svg)](https://asciinema.org/a/423716?autoplay=1)
 
+## Requirements
+1. Python 3.6 or newer
+2. Bash, zsh or ksh
+
 ## Initial Set Up
 1. Clone the repository
 ```bash
