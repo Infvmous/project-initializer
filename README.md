@@ -2,7 +2,7 @@
 
 # DEPRECATED!!!
 
-Use [GitHub CLI](git@github.com:ysomad/project-initializer.git) instead
+Use [GitHub CLI](https://cli.github.com/) instead
 
 [![demo](https://asciinema.org/a/423716.svg)](https://asciinema.org/a/423716?autoplay=1)
 
