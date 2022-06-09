@@ -1,5 +1,9 @@
 # Project Initializer
 
+# DEPRECATED!!!
+
+Use [GitHub CLI](git@github.com:ysomad/project-initializer.git) instead
+
 [![demo](https://asciinema.org/a/423716.svg)](https://asciinema.org/a/423716?autoplay=1)
 
 ## Requirements
@@ -18,8 +22,8 @@ $ cd /path/to/project-initializer
 3. Run `setup.sh` and enter GitHub API token and username
 ```bash
 $ source setup.sh
-Enter GitHub API token(with repo scope): 
-Enter GitHub username: 
+Enter GitHub API token(with repo scope):
+Enter GitHub username:
 ```
 
 ## Usage
@@ -42,4 +46,4 @@ $ init -e code projectname
 Option | Description
 ------------ | -------------
 -f | path to folder where to create a new project
--e | code editor to open newly created project 
+-e | code editor to open newly created project
